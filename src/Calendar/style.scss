@@ -1,0 +1,245 @@
+// @import url('https://fonts.googleapis.com/css?family=Manjari:400,700,800&display=swap');
+
+$LightBlue: #5684AE;
+$DarkBlue: #0F4C81;
+$LightOrange: #FFE4C8;
+$DarkOrange: #F9BE81;
+$Calendar-Tile-Color:  #E4F6ED;
+
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.calendar {
+  width: 1000px;
+  margin: 100px auto 0;
+  box-shadow: 1px 2px 3px 4px rgba(0, 0, 0, .1);
+  border-radius: 6px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 6px 6px 0 0;
+    color: $DarkBlue;
+}
+
+.nav {
+  border:none;
+  outline: 0;
+  margin-right: 15px;
+  background-color: transparent;
+  color: $DarkBlue;
+  cursor: pointer;
+
+  &--today {
+    border: 2px solid $DarkBlue;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+
+  &--month {
+    background-color: $DarkBlue;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+}
+
+.ul-month{
+    padding: 10px; 
+    background-color: white;
+    box-shadow: 1px 2px 3px 4px rgba(0, 0, 0, .1);
+    border-radius: 5px;
+
+    .li--month {
+        cursor: pointer;
+        margin-top: 5px;
+    }
+}
+
+.datetime {
+  margin: 0 auto;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.week-container,
+.day-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.week-cell,
+.day-cell {
+  flex: 0 0 calc((100% - 14px) / 7);
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-top: 10px;
+}
+
+.week-cell{
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+.day-cell {
+    border: 1px solid rgba(0, 0, 0, .1);
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+
+    .day-cell--today {
+        background-color: $DarkBlue;
+        padding: 5px 10px;
+        border-radius: 50%;
+    }
+
+    .day-event {
+        margin-top: 3px;
+        width: 100%;
+        border-radius: 2px;
+        overflow: hidden;
+        display: flex;
+        background-color: $LightOrange;  
+
+        .event-bar {
+            width: 2px;
+            background-color: $DarkBlue;
+        }
+
+        .event-title {
+            font-size: 10px;
+            padding: 3px;
+            color: darkblue;
+        }
+    }
+
+    .day-event--special {
+        margin-top: 3px;
+        width: 100%;
+        border-radius: 2px;
+        overflow: hidden;
+        display: flex;
+        background-color: $DarkBlue;    
+        
+        .event-bar {
+            width: 2px;
+            background-color: $DarkOrange;
+        }
+
+        .event-title {
+            font-size: 10px;
+            padding: 3px;
+            color: white;
+        }
+    }
+
+
+    &--faded {
+        opacity: .4;
+    }
+
+    &--today {
+        background-color: $Calendar-Tile-Color;
+        color: #fff;
+        
+    }
+}
+
+//  modal event  
+
+.modal-event {
+    background-color: white;
+    padding : 10px 20px;
+    border-radius: 10px;
+    color: $DarkBlue;
+
+    .modal-header{
+        display:  flex;
+        justify-content: space-between;
+
+        .modal-day {
+            font-size: 16px;
+        }
+
+        .btn-close {
+            margin: 10px;
+        }
+    }
+
+    .modal-title {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .day-event {
+        margin-top: 5px;
+        width: 100%;
+        border-radius: 2px;
+        overflow: hidden;
+        display: flex;
+        background-color: $LightOrange;  
+
+        .event-bar {
+            width: 4px;
+            background-color: $DarkBlue;
+        }
+
+        .event-card {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .event-title {
+            font-size: 16px;
+            color: darkblue;
+            font-weight: bold;
+        }
+    }
+
+    .day-event--special {
+        margin-top: 5px;
+        width: 100%;
+        border-radius: 2px;
+        overflow: hidden;
+        display: flex;
+        background-color: $DarkBlue;  
+
+        .event-bar {
+            width: 4px;
+            background-color: $DarkOrange;
+        }
+
+        .event-card {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            color: white;
+        }
+
+        .event-title {
+            font-size: 16px;
+            color: white;
+            font-weight: bold;
+        }
+    }
+
+    .view-more {
+        color: white;
+    }
+    .modal-footer {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+}
